@@ -1,0 +1,33 @@
+# Docker Compose for quanXAI
+# Simple setup with SQLite + Milvus Lite (no external services needed)
+#
+# Usage:
+#   1. cp .env.example .env  (add your API keys)
+#   2. docker-compose up --build
+#   3. Run data ingestion: docker-compose exec app python -m src.cli.ingest
+#   4. API available at http://localhost:8000
+
+services:
+  app:
+    build: .
+    container_name: quanxai-api
+    env_file:
+      - .env
+    volumes:
+      # Use named volume for database files (fixes locking issues)
+      - quanxai_data:/app/data
+      # Mount CSV file explicitly so updates on host are seen in container
+      - ./data/products_catalog.csv:/app/data/products_catalog.csv
+
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  quanxai_data:
