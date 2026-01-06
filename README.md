@@ -96,4 +96,5 @@ What I Learned:
 
 - Balancing Determinism & Agency: Learned when to enforce strict logic (Price Analysis must be 100% accurate) versus when to let the Agent be creative (Market Research and conversational synthesis).
 - Agent Design: Realized the importance of clear tool selection, effective structured prompts, and structured output for successful agent orchestration.
+- Design Patterns & Architecture: Gained hands-on experience with Architecture and principles, which were previously unfamiliar territory. This project helped solidify my understanding of separation of concerns and dependency inversion. 
 ```
