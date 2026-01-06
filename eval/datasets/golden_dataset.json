@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "total_cases": 15,
+    "categories": {
+      "product_qa": 5,
+      "market_analysis": 5,
+      "multi_tool": 5
+    }
+  },
+  "test_cases": [
+    {
+      "input": "Imagine a sudden surge in demand for wireless headphones. How would this affect current stock levels and availability?",
+      "expected_output": null,
+      "category": "product_qa"
+    },
+    {
+      "input": "Request the cost breakdown for the newest flagship smartphone's features and specifications.",
+      "expected_output": null,
+      "category": "product_qa"
+    },
+    {
+      "input": "Imagine a future where gaming laptops are in high demand. How would limited inventory affect pricing and availability?",
+      "expected_output": null,
+      "category": "product_qa"
+    },
+    {
+      "input": "Analyze how resolution, refresh rate, and HDR capabilities collectively define the specifications of a 4K Ultra HD television.",
+      "expected_output": null,
+      "category": "product_qa"
+    },
+    {
+      "input": "What specific discounts or promotions are currently offered on various kitchen appliances?",
+      "expected_output": null,
+      "category": "product_qa"
+    },
+    {
+      "input": "How do current market trends in the organic food industry compare to those in conventional food sectors?",
+      "expected_output": null,
+      "category": "market_analysis"
+    },
+    {
+      "input": "Analyze the pricing strategies of sustainable goods in relation to our eco-conscious offerings.",
+      "expected_output": null,
+      "category": "market_analysis"
+    },
+    {
+      "input": "Analyze how customer feedback, product features, and market trends converge to shape perceptions of our latest launch.",
+      "expected_output": null,
+      "category": "market_analysis"
+    },
+    {
+      "input": "What specific pricing strategies are employed by competitors in the tech gadget sector?",
+      "expected_output": null,
+      "category": "market_analysis"
+    },
+    {
+      "input": "How has consumer sentiment evolved in the last year concerning our brand's reputation and loyalty?",
+      "expected_output": null,
+      "category": "market_analysis"
+    },
+    {
+      "input": "Imagine if our top-selling product's price was suddenly halved. How would internal sales data and competitor pricing influence consumer behavior and overall revenue?",
+      "expected_output": null,
+      "category": "multi_tool"
+    },
+    {
+      "input": "Evaluate our inventory turnover rate against industry benchmarks, and propose specific adjustments to enhance operational efficiency while considering cost implications and customer satisfaction.",
+      "expected_output": null,
+      "category": "multi_tool"
+    },
+    {
+      "input": "How do customer feedback and market trends influence feature prioritization for product updates?",
+      "expected_output": null,
+      "category": "multi_tool"
+    },
+    {
+      "input": "Analyze the projected sales figures for our new product line versus competitors, considering market trends and consumer preferences, and recommend strategic marketing adjustments to enhance market penetration.",
+      "expected_output": null,
+      "category": "multi_tool"
+    },
+    {
+      "input": "How can we utilize internal customer purchase data and external market analysis to pinpoint viable new market opportunities for business growth?",
+      "expected_output": null,
+      "category": "multi_tool"
+    }
+  ]
+}
