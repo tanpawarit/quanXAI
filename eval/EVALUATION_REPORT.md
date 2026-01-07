@@ -16,7 +16,7 @@
 
 ---
 
-## Cost Estimation
+## Cost Estimation (this is not real cost, just for demo it estimated cost from AI)
 
 | Metric | Value |
 |--------|-------|
@@ -24,9 +24,8 @@
 | Estimated Token Usage | ~20K tokens |
 | **Estimated Cost** | **~$0.01 USD** |
 
-> Using `gpt-4o-mini` pricing: $0.15/1M input, $0.60/1M output
-> Much cheaper than gpt-4o (~10x cost savings)
 
+>note : in real world we can gather from llm provider response return token usage
 ---
 
 ## Failed Tests Analysis
@@ -48,6 +47,7 @@
    - **Example**: Making up market trends that weren't in sources
    - **Solution**: Improve grounding prompts OR raise threshold to 0.8+
 
+>note : root cause is common issue in AI Agent evaluation when using synthetic test cases with mini model, in future we can use larger model to evaluate AI Agent and tune threshold and prompt to get better result
 ---
 
 ## Passed Tests
@@ -80,7 +80,7 @@
 1. **Milvus Connection** - Successfully retrieving products from vector DB
 2. **RAG Pipeline** - Faithfulness test passing (grounded answers)
 3. **Cost Efficiency** - Using gpt-4o-mini for 10x cost savings
-4. **Speed** - Tests completing in ~8 min (down from 30+ min)
+4. **Speed** - Tests completing in ~8 min 
 
 ### Known Issues
 
@@ -88,32 +88,12 @@
    - Test cases generated without knowing actual catalog
    - Results in low relevancy scores
    
-2. **Hallucination Tolerance**
+2. **Hallucination Tolerance (should be tune)**
    - Current threshold (0.7) too strict for generative analysis
-   - May need to raise to 0.8 or remove assert
+   - May need to raise to 0.8 or remove assert  
 
 ---
 
-## Recommendations
-
-### Immediate Actions
-
-1. **Accept 60% as Baseline**
-   - Reasonable for synthetic tests
-   - Focus on trend tracking, not absolute scores
-
-2. **Adjust Thresholds**
-   ```python
-   # Consider these changes:
-   AnswerRelevancyMetric(threshold=0.3)  # More lenient
-   HallucinationMetric(threshold=0.85)   # Allow some creativity
-   ```
-
-3. **Skip Problematic Tests**
-   ```bash
-   # For faster feedback:
-   pytest -k "not (relevancy or hallucination)"
-   ```
 
 ### Long-term Improvements
 
@@ -131,26 +111,3 @@
    - Detect regressions
    - Compare prompt iterations
    - A/B test model versions
-
----
-
-## Usage Examples
-
-### Run Evaluation
-```bash
-# Fast (skip multi-tool tests)
-uv run pytest eval/test_agent_evaluation.py -v -k "not multi_tool"
-
-# Full evaluation (slower)
-uv run pytest eval/test_agent_evaluation.py -v
-```
-
-### Re-generate Test Cases
-```bash
-uv run python -m eval.generate_test_data
-```
-
-### View This Report
-```bash
-cat eval/EVALUATION_REPORT.md
-```

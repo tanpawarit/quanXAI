@@ -54,4 +54,4 @@ class AgentState(TypedDict):
     # Final output
     answer: str
     confidence: float
-    agents_used: list[str]
+    agents_used: Annotated[list[str], add]
