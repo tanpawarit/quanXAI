@@ -83,7 +83,7 @@ What's Not Implemented:
 - Sequential Agent Execution: The Agent Graph runs product_qa and market_analysis steps sequentially, even if they could be executed in parallel to reduce latency.
 - Memory-Limited Ingestion: The DataIngester loads the entire CSV dataset into memory before processing. This will cause Out-Of-Memory (OOM) errors with large datasets (e.g., >100MB files).
 - Lack of Resiliency: There is no exponential backoff or retry mechanism implemented for external API calls (OpenAI, Tavily) or database connections.
-- Agent Request ID: For each request, should include a user identifier or a session ID for production.
+- Agent User ID: For each request, should include a user identifier or a session ID for production.
 
 What I Would Improve:
 
