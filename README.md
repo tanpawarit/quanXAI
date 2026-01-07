@@ -1,3 +1,17 @@
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [1. Architecture](architecture/1.ARCHITECTURE.md) | System overview and design decisions |
+| [2. Agent](architecture/2.AGENT.md) | Agent design and orchestration |
+| [3. Pipeline](architecture/3.PIPELINE.md) | Data ingestion pipeline |
+| [4. API](architecture/4.API.md) | API endpoints and usage |
+| [5. Load Test](architecture/5.LOADTEST.MD) | Performance testing results |
+| [6. Evaluation](architecture/6.EVALUATION.MD) | Agent evaluation with DeepEval |
+| [7. Test](architecture/7.TEST.md) | Testing strategy and structure |
+
+---
+
 ## Quick Start
 
 ### Prerequisites
